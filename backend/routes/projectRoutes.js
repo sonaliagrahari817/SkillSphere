@@ -1,3 +1,4 @@
+const User = require("../models/User")
 const express = require("express")
 const Project = require("../models/Project")
 const protect = require("../middleware/authMiddleware")
@@ -171,9 +172,10 @@ router.post(
 router.post("/:id/comments", protect, async (req, res) => {
   try {
     const { text } = req.body
-    const name = req.user.name
 
-    if (!name || !text) {
+    const user = await User.findById(req.user.id)
+
+    if (!user || !user.name || !text) {
       return res.status(400).json({
         message: "Name and comment are required"
       })
@@ -188,7 +190,7 @@ router.post("/:id/comments", protect, async (req, res) => {
     }
 
     project.comments.push({
-      name,
+      name: user.name,
       text
     })
 
@@ -199,6 +201,11 @@ router.post("/:id/comments", protect, async (req, res) => {
       comments: project.comments
     })
   } catch (error) {
+    console.error(
+      "Comment error:",
+      error
+    )
+
     res.status(500).json({
       message: "Failed to add comment",
       error: error.message
