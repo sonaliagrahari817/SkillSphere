@@ -1,0 +1,199 @@
+.navbar {
+  width: 100%;
+  height: 72px;
+  padding: 0 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+
+  background: rgba(8, 13, 28, 0.88);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  backdrop-filter: blur(16px);
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #f8fafc;
+  text-decoration: none;
+
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+
+  transition: 0.25s ease;
+}
+
+.logo:hover {
+  color: #60a5fa;
+}
+.logo-mark {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    135deg,
+    #60a5fa,
+    #818cf8
+  );
+
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 800;
+
+  box-shadow:
+    0 8px 25px rgba(96, 165, 250, 0.22);
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link {
+  position: relative;
+
+  padding: 9px 14px;
+
+  color: #94a3b8;
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  border-radius: 9px;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Hover */
+
+.nav-link:hover {
+  color: #f8fafc;
+  background: rgba(96, 165, 250, 0.08);
+
+  transform: translateY(-1px);
+}
+
+/* =========================
+   ACTIVE PAGE
+========================= */
+
+.nav-link.active {
+  color: #ffffff;
+
+  background: rgba(96, 165, 250, 0.13);
+}
+
+/* Active indicator */
+
+.nav-link.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 2px;
+
+  width: 18px;
+  height: 3px;
+
+  transform: translateX(-50%);
+
+  border-radius: 999px;
+
+  background: #60a5fa;
+}
+
+/* =========================
+   LOGOUT
+========================= */
+
+.logout-btn {
+  border: none;
+  background: transparent;
+
+  padding: 9px 14px;
+
+  color: #94a3b8;
+
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.logout-btn:hover {
+  color: #f8fafc;
+  background: rgba(239, 68, 68, 0.1);
+
+  transform: translateY(-1px);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 750px) {
+  .navbar {
+    height: auto;
+    min-height: 72px;
+
+    padding: 14px 20px;
+
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-links {
+    width: 100%;
+
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 5px;
+  }
+
+  .nav-link,
+  .logout-btn {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+}
