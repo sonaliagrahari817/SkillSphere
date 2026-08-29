@@ -132,9 +132,10 @@ function ProjectDetails() {
         `https://skillsphere-backend-puyd.onrender.com/api/projects/${id}/comments`,
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
+         headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`
+        },
           body: JSON.stringify({
             name: user.name,
             text: comment.trim()
