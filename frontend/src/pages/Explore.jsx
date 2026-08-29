@@ -12,7 +12,7 @@ function Explore() {
     const fetchProjects = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/projects"
+          "https://skillsphere-backend-puyd.onrender.com/api/projects"
         )
 
         const data = await response.json()
@@ -237,8 +237,7 @@ function Explore() {
                   <div className="explore-image-wrap">
 
                     <img
-                      src={`http://localhost:5000${project.image}`}
-                      alt={project.title}
+                    src={`https://skillsphere-backend-puyd.onrender.com${project.image}`}
                     />
 
                     <span className="project-badge">

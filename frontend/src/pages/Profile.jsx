@@ -20,7 +20,7 @@ function Profile() {
 
       try {
         const response = await fetch(
-          "http://localhost:5000/api/projects"
+          "https://skillsphere-backend-puyd.onrender.com/api/projects"
         )
 
         const data = await response.json()
@@ -253,7 +253,7 @@ function Profile() {
 
                         {project.image ? (
                           <img
-                            src={`http://localhost:5000${project.image}`}
+                            src={`https://skillsphere-backend-puyd.onrender.com${project.image}`}
                             alt={project.title}
                           />
                         ) : (

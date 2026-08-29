@@ -18,7 +18,7 @@ function MyProjects() {
     const fetchProjects = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/projects"
+          "https://skillsphere-backend-puyd.onrender.com/api/projects"
         )
 
         const data = await response.json()
@@ -89,7 +89,7 @@ function MyProjects() {
       }
 
       const response = await fetch(
-        `http://localhost:5000/api/projects/${deleteProjectId}`,
+        `https://skillsphere-backend-puyd.onrender.com/api/projects/${deleteProjectId}`,
         {
           method: "DELETE",
           headers: {
@@ -175,6 +175,8 @@ function MyProjects() {
 
       <div className="my-projects-container">
 
+        {/* HEADER */}
+
         <section className="my-projects-header">
 
           <div>
@@ -201,6 +203,8 @@ function MyProjects() {
 
         </section>
 
+
+        {/* STATS */}
 
         <section className="my-project-stats">
 
@@ -248,6 +252,8 @@ function MyProjects() {
         </section>
 
 
+        {/* EMPTY */}
+
         {projects.length === 0 ? (
           <section className="my-projects-empty">
 
@@ -275,6 +281,8 @@ function MyProjects() {
           </section>
         ) : (
 
+          /* PROJECT GRID */
+
           <section className="my-project-grid">
 
             {projects.map((project) => (
@@ -283,13 +291,15 @@ function MyProjects() {
                 key={project._id}
               >
 
+                {/* IMAGE */}
+
                 {project.image ? (
                   <Link
                     to={`/project/${project._id}`}
                     className="dashboard-image-link"
                   >
                     <img
-                      src={`http://localhost:5000${project.image}`}
+                      src={`https://skillsphere-backend-puyd.onrender.com${project.image}`}
                       alt={project.title}
                       className="dashboard-project-image"
                     />
@@ -307,6 +317,8 @@ function MyProjects() {
                   </Link>
                 )}
 
+
+                {/* BODY */}
 
                 <div className="dashboard-project-body">
 
@@ -327,6 +339,8 @@ function MyProjects() {
                   </p>
 
 
+                  {/* TECH */}
+
                   {project.tech && (
                     <div className="dashboard-tech">
 
@@ -345,6 +359,8 @@ function MyProjects() {
                   )}
 
 
+                  {/* STATS */}
+
                   <div className="dashboard-project-meta">
 
                     <span>
@@ -359,6 +375,8 @@ function MyProjects() {
 
                   </div>
 
+
+                  {/* ACTIONS */}
 
                   <div className="dashboard-actions">
 

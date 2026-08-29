@@ -12,7 +12,7 @@ function Home() {
     const fetchProjects = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/projects"
+          "https://skillsphere-backend-puyd.onrender.com/api/projects"
         )
 
         const data = await response.json()
@@ -32,7 +32,7 @@ function Home() {
     const fetchCreators = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/auth/users"
+          "https://skillsphere-backend-puyd.onrender.com/api/auth/users"
         )
 
         const data = await response.json()

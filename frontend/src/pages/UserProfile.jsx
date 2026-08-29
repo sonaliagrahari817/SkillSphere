@@ -14,10 +14,10 @@ function UserProfile() {
         const [userResponse, projectsResponse] =
           await Promise.all([
             fetch(
-              `http://localhost:5000/api/auth/users/${id}`
+              `https://skillsphere-backend-puyd.onrender.com/api/auth/users/${id}`
             ),
             fetch(
-              "http://localhost:5000/api/projects"
+              "https://skillsphere-backend-puyd.onrender.com/api/projects"
             )
           ])
 
@@ -155,7 +155,7 @@ function UserProfile() {
 
                 {project.image && (
                   <img
-                    src={`http://localhost:5000${project.image}`}
+                    src={`https://skillsphere-backend-puyd.onrender.com${project.image}`}
                     alt={project.title}
                     className="my-project-image"
                   />

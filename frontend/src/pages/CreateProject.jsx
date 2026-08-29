@@ -99,7 +99,7 @@ function CreateProject() {
       formData.append("image", image)
 
       const response = await fetch(
-        "http://localhost:5000/api/projects",
+        "https://skillsphere-backend-puyd.onrender.com/api/projects",
         {
           method: "POST",
 

@@ -12,7 +12,7 @@ function ProjectCard({
 
       {image && (
         <img
-          src={`http://localhost:5000${image}`}
+          src={`https://skillsphere-backend-puyd.onrender.com${image}`}
           alt={title}
           className="project-card-image"
         />

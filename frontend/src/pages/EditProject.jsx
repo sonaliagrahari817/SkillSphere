@@ -30,7 +30,7 @@ function EditProject() {
 
       try {
         const response = await fetch(
-          `http://localhost:5000/api/projects/${id}`
+          `https://skillsphere-backend-puyd.onrender.com/api/projects/${id}`
         )
 
         const data = await response.json()
@@ -47,7 +47,7 @@ function EditProject() {
 
         if (data.image) {
           setPreview(
-            `http://localhost:5000${data.image}`
+            `https://skillsphere-backend-puyd.onrender.com${data.image}`
           )
         }
       } catch (error) {
@@ -143,7 +143,7 @@ function EditProject() {
       }
 
       const response = await fetch(
-        `http://localhost:5000/api/projects/${id}`,
+        `https://skillsphere-backend-puyd.onrender.com/api/projects/${id}`,
         {
           method: "PUT",
 

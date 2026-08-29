@@ -21,7 +21,7 @@ function ProjectDetails() {
     const fetchProject = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/projects/${id}`
+          `https://skillsphere-backend-puyd.onrender.com/api/projects/${id}`
         )
 
         const data = await response.json()
@@ -80,7 +80,7 @@ function ProjectDetails() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/projects/${id}/like`,
+        `https://skillsphere-backend-puyd.onrender.com/api/projects/${id}/like`,
         {
           method: "POST",
           headers: {
@@ -129,7 +129,7 @@ function ProjectDetails() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/projects/${id}/comments`,
+        `https://skillsphere-backend-puyd.onrender.com/api/projects/${id}/comments`,
         {
           method: "POST",
           headers: {
@@ -283,7 +283,7 @@ function ProjectDetails() {
           <section className="project-hero-image">
 
             <img
-              src={`http://localhost:5000${project.image}`}
+              src={`https://skillsphere-backend-puyd.onrender.com${project.image}`}
               alt={project.title}
             />
 

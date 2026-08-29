@@ -28,7 +28,7 @@ function EditProfile() {
       setSaving(true)
 
       const response = await fetch(
-        `http://localhost:5000/api/auth/profile/${user.id}`,
+        `https://skillsphere-backend-puyd.onrender.com/api/projects/${id}`,
         {
           method: "PUT",
           headers: {
