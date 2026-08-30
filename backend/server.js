@@ -1,3 +1,4 @@
+const path = require("path")
 const express = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")
@@ -10,7 +11,7 @@ app.use(cors())
 app.use(express.json())
 
 // Serve uploaded project images
-app.use("/uploads", express.static("uploads"))
+app.use("/uploads", express.static(path.join(__dirname, "uploads")))
 
 // Routes
 const authRoutes = require("./routes/authRoutes")
