@@ -28,14 +28,12 @@ function EditProfile() {
       setSaving(true)
 
       const response = await fetch(
-        `https://skillsphere-backend-puyd.onrender.com/api/projects/${id}`,
+        `https://skillsphere-backend-puyd.onrender.com/api/auth/profile/${user.id}`,
         {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem(
-              "token"
-            )}`
+            Authorization: `Bearer ${localStorage.getItem("token")}`
           },
           body: JSON.stringify({
             name: name.trim(),
@@ -51,13 +49,15 @@ function EditProfile() {
 
       if (!response.ok) {
         showToast(
-          data.message,
+          data.message || "Failed to update profile",
           "error"
         )
         return
       }
 
-      login(data.user)
+      if (data.user) {
+        login(data.user)
+      }
 
       showToast(
         "Profile updated successfully!",
@@ -98,7 +98,6 @@ function EditProfile() {
 
   return (
     <main className="edit-profile-page">
-
       <div className="edit-profile-container">
 
         {/* TOP */}
@@ -141,15 +140,21 @@ function EditProfile() {
               <div className="edit-form-section">
 
                 <div className="edit-form-heading">
+
                   <span>01</span>
 
                   <div>
-                    <h2>Basic Information</h2>
+
+                    <h2>
+                      Basic Information
+                    </h2>
 
                     <p>
                       Your public identity on SkillSphere.
                     </p>
+
                   </div>
+
                 </div>
 
 
@@ -201,16 +206,22 @@ function EditProfile() {
               <div className="edit-form-section">
 
                 <div className="edit-form-heading">
+
                   <span>02</span>
 
                   <div>
-                    <h2>About You</h2>
+
+                    <h2>
+                      About You
+                    </h2>
 
                     <p>
                       Give people a reason to know
                       more about you.
                     </p>
+
                   </div>
+
                 </div>
 
 
@@ -245,15 +256,21 @@ function EditProfile() {
               <div className="edit-form-section">
 
                 <div className="edit-form-heading">
+
                   <span>03</span>
 
                   <div>
-                    <h2>Skills</h2>
+
+                    <h2>
+                      Skills
+                    </h2>
 
                     <p>
                       Add technologies you work with.
                     </p>
+
                   </div>
+
                 </div>
 
 
@@ -288,15 +305,21 @@ function EditProfile() {
               <div className="edit-form-section">
 
                 <div className="edit-form-heading">
+
                   <span>04</span>
 
                   <div>
-                    <h2>Social Links</h2>
+
+                    <h2>
+                      Social Links
+                    </h2>
 
                     <p>
                       Let people discover your work.
                     </p>
+
                   </div>
+
                 </div>
 
 
@@ -351,6 +374,7 @@ function EditProfile() {
                   Cancel
                 </Link>
 
+
                 <button
                   type="submit"
                   className="save-profile-button"
@@ -376,26 +400,37 @@ function EditProfile() {
               PREVIEW
             </p>
 
+
             <div className="preview-avatar">
+
               {name
                 ?.charAt(0)
                 .toUpperCase() || "?"}
+
             </div>
+
 
             <h3>
               {name || "Your Name"}
             </h3>
 
+
             <span className="preview-role">
+
               {user.role === "developer"
                 ? "Developer"
                 : "Creator"}
+
             </span>
 
+
             <p className="preview-bio">
+
               {bio ||
                 "Your bio will appear here."}
+
             </p>
+
 
             <div className="preview-skills">
 
@@ -423,7 +458,6 @@ function EditProfile() {
         </section>
 
       </div>
-
     </main>
   )
 }
