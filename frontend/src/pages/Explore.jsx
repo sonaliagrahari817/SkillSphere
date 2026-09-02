@@ -226,86 +226,93 @@ function Explore() {
         ) : (
           <div className="explore-grid">
 
-            {filteredProjects.map((project) => (
+            {filteredProjects.map((project) => {
 
-              <article
-                className="explore-project-card"
-                key={project._id}
-              >
+              const imageUrl =
+                project.image?.startsWith("http")
+                  ? project.image
+                  : `https://skillsphere-backend-puyd.onrender.com${project.image}`
 
-                {project.image ? (
-                  <div className="explore-image-wrap">
+              return (
+                <article
+                  className="explore-project-card"
+                  key={project._id}
+                >
 
-                    <img
-                    src={`https://skillsphere-backend-puyd.onrender.com${project.image}`}
-                    />
+                  {project.image ? (
+                    <div className="explore-image-wrap">
 
-                    <span className="project-badge">
-                      PROJECT
-                    </span>
+                      <img
+                        src={imageUrl}
+                        alt={project.title}
+                      />
 
-                  </div>
-                ) : (
-                  <div className="explore-image-placeholder">
-                    <span>◇</span>
-                  </div>
-                )}
+                      <span className="project-badge">
+                        PROJECT
+                      </span>
 
-
-                <div className="explore-card-body">
-
-                  <h3>
-                    {project.title}
-                  </h3>
-
-                  <p className="explore-description">
-                    {project.description}
-                  </p>
-
-
-                  {project.tech && (
-                    <div className="explore-tech">
-
-                      {project.tech
-                        .split(",")
-                        .slice(0, 4)
-                        .map((tech) => (
-                          <span key={tech.trim()}>
-                            {tech.trim()}
-                          </span>
-                        ))}
-
+                    </div>
+                  ) : (
+                    <div className="explore-image-placeholder">
+                      <span>◇</span>
                     </div>
                   )}
 
 
-                  <div className="explore-card-footer">
+                  <div className="explore-card-body">
 
-                    <div className="explore-stats">
+                    <h3>
+                      {project.title}
+                    </h3>
 
-                      <span>
-                        ❤️ {project.likes || 0}
-                      </span>
+                    <p className="explore-description">
+                      {project.description}
+                    </p>
 
-                      <span>
-                        💬 {project.comments?.length || 0}
-                      </span>
+
+                    {project.tech && (
+                      <div className="explore-tech">
+
+                        {project.tech
+                          .split(",")
+                          .slice(0, 4)
+                          .map((tech) => (
+                            <span key={tech.trim()}>
+                              {tech.trim()}
+                            </span>
+                          ))}
+
+                      </div>
+                    )}
+
+
+                    <div className="explore-card-footer">
+
+                      <div className="explore-stats">
+
+                        <span>
+                          ❤️ {project.likes || 0}
+                        </span>
+
+                        <span>
+                          💬 {project.comments?.length || 0}
+                        </span>
+
+                      </div>
+
+                      <Link
+                        to={`/project/${project._id}`}
+                      >
+                        View Project →
+                      </Link>
 
                     </div>
 
-                    <Link
-                      to={`/project/${project._id}`}
-                    >
-                      View Project →
-                    </Link>
-
                   </div>
 
-                </div>
-
-              </article>
-
-            ))}
+                </article>
+              )
+            })}
 
           </div>
         )}

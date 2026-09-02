@@ -182,6 +182,7 @@ function Profile() {
                 </div>
               ) : (
                 <div className="profile-empty-small">
+
                   <p>
                     No skills added yet.
                   </p>
@@ -189,6 +190,7 @@ function Profile() {
                   <Link to="/edit-profile">
                     Add your skills →
                   </Link>
+
                 </div>
               )}
 
@@ -202,11 +204,13 @@ function Profile() {
               <div className="profile-project-heading">
 
                 <div>
+
                   <p className="section-label">
                     PORTFOLIO
                   </p>
 
                   <h2>My Projects</h2>
+
                 </div>
 
                 <Link to="/my-projects">
@@ -244,46 +248,56 @@ function Profile() {
                 <div className="profile-project-list">
 
                   {projects.slice(0, 3).map(
-                    (project) => (
-                      <Link
-                        key={project._id}
-                        to={`/project/${project._id}`}
-                        className="profile-project-item"
-                      >
+                    (project) => {
 
-                        {project.image ? (
-                          <img
-                            src={`https://skillsphere-backend-puyd.onrender.com${project.image}`}
-                            alt={project.title}
-                          />
-                        ) : (
-                          <div className="profile-project-placeholder">
-                            ◇
+                      const imageUrl =
+                        project.image?.startsWith("http")
+                          ? project.image
+                          : `https://skillsphere-backend-puyd.onrender.com${project.image}`
+
+                      return (
+                        <Link
+                          key={project._id}
+                          to={`/project/${project._id}`}
+                          className="profile-project-item"
+                        >
+
+                          {project.image ? (
+                            <img
+                              src={imageUrl}
+                              alt={project.title}
+                            />
+                          ) : (
+                            <div className="profile-project-placeholder">
+                              ◇
+                            </div>
+                          )}
+
+                          <div>
+
+                            <h3>
+                              {project.title}
+                            </h3>
+
+                            <p>
+                              {project.description}
+                            </p>
+
+                            <span>
+                              ❤️ {project.likes || 0}
+                              {"  "}
+                              ·
+                              {"  "}
+                              💬{" "}
+                              {project.comments
+                                ?.length || 0}
+                            </span>
+
                           </div>
-                        )}
 
-                        <div>
-                          <h3>
-                            {project.title}
-                          </h3>
-
-                          <p>
-                            {project.description}
-                          </p>
-
-                          <span>
-                            ❤️ {project.likes || 0}
-                            {"  "}
-                            ·
-                            {"  "}
-                            💬{" "}
-                            {project.comments
-                              ?.length || 0}
-                          </span>
-                        </div>
-
-                      </Link>
-                    )
+                        </Link>
+                      )
+                    }
                   )}
 
                 </div>
@@ -318,6 +332,7 @@ function Profile() {
               <div className="profile-stats-list">
 
                 <div>
+
                   <strong>
                     {projects.length}
                   </strong>
@@ -325,9 +340,11 @@ function Profile() {
                   <span>
                     Projects
                   </span>
+
                 </div>
 
                 <div>
+
                   <strong>
                     {projects.reduce(
                       (total, project) =>
@@ -340,9 +357,11 @@ function Profile() {
                   <span>
                     Likes received
                   </span>
+
                 </div>
 
                 <div>
+
                   <strong>
                     {skills.length}
                   </strong>
@@ -350,6 +369,7 @@ function Profile() {
                   <span>
                     Skills
                   </span>
+
                 </div>
 
               </div>
@@ -398,6 +418,7 @@ function Profile() {
                 {!user.github &&
                   !user.linkedin && (
                     <div className="profile-empty-links">
+
                       <p>
                         No social links added.
                       </p>
@@ -405,6 +426,7 @@ function Profile() {
                       <Link to="/edit-profile">
                         Add links →
                       </Link>
+
                     </div>
                   )}
 

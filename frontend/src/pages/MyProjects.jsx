@@ -102,7 +102,8 @@ function MyProjects() {
 
       if (!response.ok) {
         showToast(
-          data.message || "Unable to delete project",
+          data.message ||
+            "Unable to delete project",
           "error"
         )
         return
@@ -224,7 +225,8 @@ function MyProjects() {
             <strong>
               {projects.reduce(
                 (total, project) =>
-                  total + (project.likes || 0),
+                  total +
+                  (project.likes || 0),
                 0
               )}
             </strong>
@@ -239,7 +241,8 @@ function MyProjects() {
               {projects.reduce(
                 (total, project) =>
                   total +
-                  (project.comments?.length || 0),
+                  (project.comments?.length ||
+                    0),
                 0
               )}
             </strong>
@@ -285,133 +288,141 @@ function MyProjects() {
 
           <section className="my-project-grid">
 
-            {projects.map((project) => (
-              <article
-                className="dashboard-project-card"
-                key={project._id}
-              >
+            {projects.map((project) => {
 
-                {/* IMAGE */}
+              const imageUrl =
+                project.image?.startsWith("http")
+                  ? project.image
+                  : `https://skillsphere-backend-puyd.onrender.com${project.image}`
 
-                {project.image ? (
-                  <Link
-                    to={`/project/${project._id}`}
-                    className="dashboard-image-link"
-                  >
-                    <img
-                      src={`https://skillsphere-backend-puyd.onrender.com${project.image}`}
-                      alt={project.title}
-                      className="dashboard-project-image"
-                    />
+              return (
+                <article
+                  className="dashboard-project-card"
+                  key={project._id}
+                >
 
-                    <span className="image-view-label">
-                      View project →
-                    </span>
-                  </Link>
-                ) : (
-                  <Link
-                    to={`/project/${project._id}`}
-                    className="dashboard-image-placeholder"
-                  >
-                    <span>◇</span>
-                  </Link>
-                )}
+                  {/* IMAGE */}
 
+                  {project.image ? (
+                    <Link
+                      to={`/project/${project._id}`}
+                      className="dashboard-image-link"
+                    >
+                      <img
+                        src={imageUrl}
+                        alt={project.title}
+                        className="dashboard-project-image"
+                      />
 
-                {/* BODY */}
-
-                <div className="dashboard-project-body">
-
-                  <div className="dashboard-project-title">
-
-                    <h2>
-                      {project.title}
-                    </h2>
-
-                    <span>
-                      Project
-                    </span>
-
-                  </div>
-
-                  <p className="dashboard-description">
-                    {project.description}
-                  </p>
-
-
-                  {/* TECH */}
-
-                  {project.tech && (
-                    <div className="dashboard-tech">
-
-                      {project.tech
-                        .split(",")
-                        .slice(0, 4)
-                        .map((tech) => (
-                          <span
-                            key={tech.trim()}
-                          >
-                            {tech.trim()}
-                          </span>
-                        ))}
-
-                    </div>
+                      <span className="image-view-label">
+                        View project →
+                      </span>
+                    </Link>
+                  ) : (
+                    <Link
+                      to={`/project/${project._id}`}
+                      className="dashboard-image-placeholder"
+                    >
+                      <span>◇</span>
+                    </Link>
                   )}
 
 
-                  {/* STATS */}
+                  {/* BODY */}
 
-                  <div className="dashboard-project-meta">
+                  <div className="dashboard-project-body">
 
-                    <span>
-                      ❤️ {project.likes || 0}
-                    </span>
+                    <div className="dashboard-project-title">
 
-                    <span>
-                      💬{" "}
-                      {project.comments?.length ||
-                        0}
-                    </span>
+                      <h2>
+                        {project.title}
+                      </h2>
+
+                      <span>
+                        Project
+                      </span>
+
+                    </div>
+
+                    <p className="dashboard-description">
+                      {project.description}
+                    </p>
+
+
+                    {/* TECH */}
+
+                    {project.tech && (
+                      <div className="dashboard-tech">
+
+                        {project.tech
+                          .split(",")
+                          .slice(0, 4)
+                          .map((tech) => (
+                            <span
+                              key={tech.trim()}
+                            >
+                              {tech.trim()}
+                            </span>
+                          ))}
+
+                      </div>
+                    )}
+
+
+                    {/* STATS */}
+
+                    <div className="dashboard-project-meta">
+
+                      <span>
+                        ❤️ {project.likes || 0}
+                      </span>
+
+                      <span>
+                        💬{" "}
+                        {project.comments?.length ||
+                          0}
+                      </span>
+
+                    </div>
+
+
+                    {/* ACTIONS */}
+
+                    <div className="dashboard-actions">
+
+                      <Link
+                        to={`/project/${project._id}`}
+                        className="dashboard-view"
+                      >
+                        View
+                      </Link>
+
+                      <Link
+                        to={`/edit-project/${project._id}`}
+                        className="dashboard-edit"
+                      >
+                        Edit
+                      </Link>
+
+                      <button
+                        type="button"
+                        className="dashboard-delete"
+                        onClick={() =>
+                          handleDeleteClick(
+                            project._id
+                          )
+                        }
+                      >
+                        Delete
+                      </button>
+
+                    </div>
 
                   </div>
 
-
-                  {/* ACTIONS */}
-
-                  <div className="dashboard-actions">
-
-                    <Link
-                      to={`/project/${project._id}`}
-                      className="dashboard-view"
-                    >
-                      View
-                    </Link>
-
-                    <Link
-                      to={`/edit-project/${project._id}`}
-                      className="dashboard-edit"
-                    >
-                      Edit
-                    </Link>
-
-                    <button
-                      type="button"
-                      className="dashboard-delete"
-                      onClick={() =>
-                        handleDeleteClick(
-                          project._id
-                        )
-                      }
-                    >
-                      Delete
-                    </button>
-
-                  </div>
-
-                </div>
-
-              </article>
-            ))}
+                </article>
+              )
+            })}
 
           </section>
 

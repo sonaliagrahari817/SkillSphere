@@ -7,21 +7,22 @@ function ProjectCard({
   tech,
   image
 }) {
+  const imageUrl = image?.startsWith("http")
+    ? image
+    : `https://skillsphere-backend-puyd.onrender.com${image}`
+
   return (
     <div className="project-card">
-
       {image && (
         <img
-          src={`https://skillsphere-backend-puyd.onrender.com${image}`}
+          src={imageUrl}
           alt={title}
           className="project-card-image"
         />
       )}
 
       <h3>{title}</h3>
-
       <p>{description}</p>
-
       <p>{tech}</p>
 
       <Link
@@ -30,7 +31,6 @@ function ProjectCard({
       >
         View Project
       </Link>
-
     </div>
   )
 }

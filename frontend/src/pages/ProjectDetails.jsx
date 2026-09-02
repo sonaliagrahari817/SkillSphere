@@ -132,10 +132,10 @@ function ProjectDetails() {
         `https://skillsphere-backend-puyd.onrender.com/api/projects/${id}/comments`,
         {
           method: "POST",
-         headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`
-        },
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`
+          },
           body: JSON.stringify({
             name: user.name,
             text: comment.trim()
@@ -220,6 +220,10 @@ function ProjectDetails() {
         .filter(Boolean)
     : []
 
+  const imageUrl = project.image?.startsWith("http")
+    ? project.image
+    : `https://skillsphere-backend-puyd.onrender.com${project.image}`
+
   return (
     <main className="project-details-page">
 
@@ -284,7 +288,7 @@ function ProjectDetails() {
           <section className="project-hero-image">
 
             <img
-              src={`https://skillsphere-backend-puyd.onrender.com${project.image}`}
+              src={imageUrl}
               alt={project.title}
             />
 
