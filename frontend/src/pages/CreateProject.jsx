@@ -99,7 +99,7 @@ function CreateProject() {
       formData.append("image", image)
 
       const response = await fetch(
-        "https://skillsphere-backend-puyd.onrender.com/api/projects",
+        "http://localhost:5000/api/projects",
         {
           method: "POST",
 
@@ -182,7 +182,7 @@ function CreateProject() {
 
           <p>
             Turn your work into a showcase
-            the SkillSphere community can
+            the BuildOrbit community can
             discover.
           </p>
 

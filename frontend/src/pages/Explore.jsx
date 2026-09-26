@@ -12,7 +12,7 @@ function Explore() {
     const fetchProjects = async () => {
       try {
         const response = await fetch(
-          "https://skillsphere-backend-puyd.onrender.com/api/projects"
+          "http://localhost:5000/api/projects"
         )
 
         const data = await response.json()
@@ -100,7 +100,7 @@ function Explore() {
 
           <p>
             Explore projects created by developers
-            and creators in the SkillSphere community.
+            and creators in the BuildOrbit community.
           </p>
 
         </div>
@@ -231,7 +231,7 @@ function Explore() {
               const imageUrl =
                 project.image?.startsWith("http")
                   ? project.image
-                  : `https://skillsphere-backend-puyd.onrender.com${project.image}`
+                  : `http://localhost:5000${project.image}`
 
               return (
                 <article

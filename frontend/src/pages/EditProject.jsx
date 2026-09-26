@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { useAuth } from "../context/AuthContext"
 import { useToast } from "../context/ToastContext"
+import "./EditProject.css"
 
 function EditProject() {
   const { id } = useParams()
@@ -30,7 +31,7 @@ function EditProject() {
 
       try {
         const response = await fetch(
-          `https://skillsphere-backend-puyd.onrender.com/api/projects/${id}`
+          `http://localhost:5000/api/projects/${id}`
         )
 
         const data = await response.json()
@@ -46,10 +47,8 @@ function EditProject() {
         setLiveDemo(data.liveDemo || "")
 
         if (data.image) {
-          setPreview(
-            `https://skillsphere-backend-puyd.onrender.com${data.image}`
-          )
-        }
+        setPreview(data.image)
+      }
       } catch (error) {
         console.error(
           "Fetch project error:",
@@ -143,7 +142,7 @@ function EditProject() {
       }
 
       const response = await fetch(
-        `https://skillsphere-backend-puyd.onrender.com/api/projects/${id}`,
+        `http://localhost:5000/api/projects/${id}`,
         {
           method: "PUT",
 

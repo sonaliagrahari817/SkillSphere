@@ -16,14 +16,16 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")))
 // Routes
 const authRoutes = require("./routes/authRoutes")
 const projectRoutes = require("./routes/projectRoutes")
+const skillRoutes = require("./routes/skillRoutes")
 
 app.use("/api/auth", authRoutes)
 app.use("/api/projects", projectRoutes)
+app.use("/api/assessments", skillRoutes)
 
 // Home route
 app.get("/", (req, res) => {
   res.json({
-    message: "SkillSphere API is running"
+    message: "BuildOrbit API is running"
   })
 })
 

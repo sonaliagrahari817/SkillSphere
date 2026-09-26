@@ -7,14 +7,18 @@ const commentSchema = new mongoose.Schema(
       required: true
     },
 
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: false
+    },
+
     text: {
       type: String,
       required: true
     }
   },
-  {
-    timestamps: true
-  }
+  { timestamps: true }
 )
 
 const projectSchema = new mongoose.Schema(
@@ -59,6 +63,48 @@ const projectSchema = new mongoose.Schema(
       ref: "User",
       required: true
     },
+    
+      teamMembers: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+      }
+    ],
+     // =========================
+// PROJECT ACTIVITY
+// =========================
+
+activity: [
+  {
+    type: {
+      type: String,
+      enum: [
+        "project_created",
+        "team_member_added",
+        "team_member_removed",
+        "project_updated"
+      ],
+      required: true
+    },
+
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true
+    },
+
+    message: {
+      type: String,
+      required: true,
+      trim: true
+    },
+
+    createdAt: {
+      type: Date,
+      default: Date.now
+    }
+  }
+],
 
     likes: {
       type: Number,

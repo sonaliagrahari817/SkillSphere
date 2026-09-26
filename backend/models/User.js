@@ -1,5 +1,24 @@
 const mongoose = require("mongoose")
 
+const roadmapProgressSchema = new mongoose.Schema(
+  {
+    topic: {
+      type: String,
+      required: true,
+      trim: true
+    },
+
+    completedAt: {
+      type: Date,
+      default: Date.now
+    }
+  },
+  {
+    _id: false
+  }
+)
+
+
 const userSchema = new mongoose.Schema(
   {
     name: {
@@ -49,6 +68,33 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "",
       trim: true
+    },
+
+
+    // =========================
+    // SAVED PROJECTS
+    // =========================
+
+    savedProjects: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Project"
+      }
+    ],
+
+
+    // =========================
+    // ROADMAP PROGRESS
+    // =========================
+
+    completedRoadmapTopics: {
+      type: [String],
+      default: []
+    },
+
+    roadmapProgress: {
+      type: [roadmapProgressSchema],
+      default: []
     }
   },
   {
@@ -56,4 +102,8 @@ const userSchema = new mongoose.Schema(
   }
 )
 
-module.exports = mongoose.model("User", userSchema)
+
+module.exports = mongoose.model(
+  "User",
+  userSchema
+)

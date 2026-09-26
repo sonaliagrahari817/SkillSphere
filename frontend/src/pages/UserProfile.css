@@ -1,0 +1,914 @@
+/* =========================
+   BUILDORBIT PUBLIC PROFILE
+========================= */
+
+.profile-page {
+  min-height: 100vh;
+
+  padding: 64px 24px 90px;
+
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(124, 58, 237, 0.16),
+      transparent 38%
+    ),
+    #0F0B1A;
+
+  color: #F5F3FF;
+}
+
+.profile-card {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  border: 1px solid #2A2340;
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(24, 19, 41, 0.96),
+      rgba(15, 11, 29, 0.98)
+    );
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.38),
+    0 0 45px rgba(124, 58, 237, 0.05);
+}
+
+
+/* =========================
+   PROFILE HERO
+========================= */
+
+.profile-hero {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 34px;
+
+  padding: 58px 60px 52px;
+
+  border-bottom: 1px solid #2A2340;
+
+  background:
+    radial-gradient(
+      circle at 12% 30%,
+      rgba(124, 58, 237, 0.14),
+      transparent 32%
+    );
+}
+
+.profile-hero::after {
+  content: "";
+
+  position: absolute;
+  right: 60px;
+  top: 50px;
+
+  width: 150px;
+  height: 150px;
+
+  border: 1px solid rgba(96, 165, 250, 0.08);
+  border-radius: 50%;
+}
+
+.profile-avatar {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 118px;
+  height: 118px;
+
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #7C3AED,
+      #4C1D95
+    );
+
+  color: #ffffff;
+
+  font-size: 48px;
+  font-weight: 800;
+
+  box-shadow:
+    0 16px 40px rgba(124, 58, 237, 0.28);
+}
+
+.profile-identity {
+  position: relative;
+  z-index: 2;
+
+  flex: 1;
+}
+
+.profile-identity .section-label {
+  margin-bottom: 10px;
+}
+
+.section-label {
+  margin: 0;
+
+  color: #60a5fa;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.profile-identity h1 {
+  margin: 0;
+
+  font-size: clamp(40px, 5vw, 62px);
+  line-height: 1.05;
+
+  letter-spacing: -2.5px;
+}
+
+.profile-role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 14px;
+  padding: 7px 13px;
+
+  border: 1px solid rgba(167, 139, 250, 0.28);
+  border-radius: 999px;
+
+  background: rgba(124, 58, 237, 0.10);
+
+  color: #C4B5FD;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.role-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #A78BFA;
+
+  box-shadow:
+    0 0 10px rgba(167, 139, 250, 0.7);
+}
+
+.profile-bio {
+  max-width: 720px;
+
+  margin: 20px 0 0;
+
+  color: #aebbd0;
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.profile-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+.profile-social-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 9px 14px;
+
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: 9px;
+
+  background: rgba(124, 58, 237, 0.06);
+
+  color: #E9E4FF !important;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.profile-social-button span {
+  color: #A78BFA;
+}
+
+.profile-social-button:hover {
+  transform: translateY(-2px);
+
+  border-color: #8B5CF6;
+
+  background: rgba(124, 58, 237, 0.12);
+
+  box-shadow:
+    0 8px 20px rgba(124, 58, 237, 0.10);
+}
+
+
+/* =========================
+   PROFILE STATS
+========================= */
+
+.profile-stats {
+  display: flex;
+  align-items: stretch;
+
+  margin: 0 60px;
+
+  border-bottom: 1px solid #1a2b49;
+}
+
+.profile-stat {
+  display: flex;
+  flex: 1;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 108px;
+
+  gap: 5px;
+}
+
+.profile-stat strong {
+  color: #f5f8ff;
+
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.profile-stat span {
+  color: #778ba8;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.profile-stat-divider {
+  width: 1px;
+  margin: 25px 0;
+
+  background: #2A2340;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.profile-section {
+  padding: 48px 60px;
+}
+
+.projects-section {
+  padding-top: 30px;
+}
+
+.profile-section + .profile-section {
+  border-top: 1px solid #162641;
+}
+
+.profile-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+}
+
+.profile-section-heading h2 {
+  margin: 7px 0 0;
+
+  color: #f5f8ff;
+
+  font-size: 28px;
+  letter-spacing: -0.5px;
+}
+
+.section-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 34px;
+  height: 30px;
+
+  padding: 0 9px;
+
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: 8px;
+
+  background: rgba(124, 58, 237, 0.08);
+
+  color: #A78BFA;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+}
+
+.skills-list span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 15px;
+
+  border: 1px solid rgba(124, 58, 237, 0.20);
+  border-radius: 10px;
+
+  background: rgba(124, 58, 237, 0.08);
+
+  color: #C4B5FD;
+
+  font-size: 13px;
+  font-weight: 650;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.skills-list span i {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #A78BFA;
+
+  box-shadow:
+    0 0 7px rgba(167, 139, 250, 0.45);
+}
+
+.skills-list span:hover {
+  transform: translateY(-2px);
+
+  border-color: #8B5CF6;
+
+  background: rgba(124, 58, 237, 0.14);
+
+  box-shadow:
+    0 6px 16px rgba(124, 58, 237, 0.08);
+}
+
+.profile-empty {
+  padding: 22px;
+
+  border: 1px dashed #2A2340;
+  border-radius: 14px;
+
+  background: rgba(24, 19, 41, 0.45);
+
+  color: #A8A3B8;
+
+  text-align: center;
+}
+
+
+/* =========================
+   PROJECT GRID
+========================= */
+
+.my-projects-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+.my-project-card {
+  overflow: hidden;
+
+  border: 1px solid #2A2340;
+  border-radius: 20px;
+
+  background: rgba(24, 19, 41, 0.82);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.my-project-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(139, 92, 246, 0.45);
+
+  background: rgba(24, 19, 41, 0.92);
+
+  box-shadow:
+    0 20px 45px rgba(124, 58, 237, 0.12);
+}
+
+
+/* =========================
+   PROJECT IMAGE
+========================= */
+
+.project-image-wrapper {
+  position: relative;
+
+  height: 205px;
+
+  overflow: hidden;
+
+  background: #081122;
+}
+
+.my-project-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.35s ease;
+}
+
+.my-project-card:hover
+.my-project-image {
+  transform: scale(1.04);
+}
+
+.project-image-overlay {
+  position: absolute;
+
+  right: 14px;
+  bottom: 14px;
+
+  padding: 7px 10px;
+
+  border: 1px solid rgba(167, 139, 250, 0.20);
+  border-radius: 8px;
+
+  background: rgba(15, 11, 29, 0.82);
+
+  color: #E9E4FF;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  backdrop-filter: blur(8px);
+}
+
+
+/* =========================
+   PROJECT CONTENT
+========================= */
+
+.project-card-content {
+  padding: 22px;
+}
+
+.project-card-top {
+  display: flex;
+  justify-content: space-between;
+}
+.project-number {
+  color: #A78BFA;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.my-project-card h3 {
+  margin: 9px 0 10px;
+
+  color: #f5f8ff;
+
+  font-size: 21px;
+  line-height: 1.3;
+}
+
+.project-description {
+  margin: 0;
+
+  color: #91a1b8;
+
+  font-size: 13px;
+  line-height: 1.7;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+.project-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+
+  margin-top: 17px;
+}
+
+.project-tech-list span {
+  padding: 5px 8px;
+
+  border: 1px solid rgba(124, 58, 237, 0.16);
+  border-radius: 6px;
+
+  background: rgba(124, 58, 237, 0.10);
+
+  color: #C4B5FD;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.edit-profile-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 21px;
+
+  padding: 11px 13px;
+
+  border: 1px solid rgba(124, 58, 237, 0.28);
+  border-radius: 9px;
+
+  background: rgba(124, 58, 237, 0.08);
+
+  color: #E9E4FF !important;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.edit-profile-btn span {
+  color: #6eafff;
+
+  font-size: 17px;
+
+  transition:
+    transform 0.2s ease;
+}
+
+.edit-profile-btn:hover {
+  transform: translateY(-2px);
+
+  border-color: #8B5CF6;
+
+  background: rgba(124, 58, 237, 0.16);
+
+  box-shadow:
+    0 8px 20px rgba(124, 58, 237, 0.10);
+}
+
+.edit-profile-btn:hover span {
+  transform: translateX(4px);
+}
+
+
+/* =========================
+   EMPTY PROJECTS
+========================= */
+
+.projects-empty {
+  padding: 50px 20px;
+}
+
+.empty-project-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  margin: 0 auto 15px;
+
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: 14px;
+
+  background: rgba(124, 58, 237, 0.10);
+
+  color: #A78BFA;
+
+  font-size: 22px;
+}
+
+.projects-empty h3 {
+  margin: 0 0 8px;
+
+  color: #dbe7f7;
+
+  font-size: 18px;
+}
+
+.projects-empty p {
+  margin: 0;
+
+  color: #778ba7;
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   STATES
+========================= */
+
+.profile-state {
+  min-height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.profile-state-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 58px;
+  height: 58px;
+
+  margin-bottom: 18px;
+
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: 16px;
+
+  background: rgba(124, 58, 237, 0.10);
+
+  color: #A78BFA;
+
+  font-size: 25px;
+
+  box-shadow:
+    0 8px 24px rgba(124, 58, 237, 0.08);
+}
+
+.profile-state h1 {
+  margin: 0;
+
+  font-size: 28px;
+}
+
+.profile-state p {
+  color: #7f91aa;
+}
+
+.profile-back-link {
+  margin-top: 10px;
+
+  color: #72aff8;
+
+  text-decoration: none;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+  .profile-page {
+    padding: 35px 14px 60px;
+  }
+
+  .profile-hero {
+    flex-direction: column;
+    align-items: center;
+
+    padding: 42px 28px;
+
+    text-align: center;
+  }
+
+  .profile-hero::after {
+    display: none;
+  }
+
+  .profile-bio {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .profile-socials {
+    justify-content: center;
+  }
+
+  .profile-stats {
+    margin: 0 28px;
+  }
+
+  .profile-section {
+    padding: 38px 28px;
+  }
+
+  .my-projects-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 560px) {
+
+  .profile-card {
+    border-radius: 20px;
+  }
+
+  .profile-hero {
+    padding: 35px 20px;
+  }
+
+  .profile-avatar {
+    width: 90px;
+    height: 90px;
+
+    border-radius: 24px;
+
+    font-size: 36px;
+  }
+
+  .profile-identity h1 {
+    font-size: 38px;
+    letter-spacing: -1.5px;
+  }
+
+  .profile-stats {
+    margin: 0 15px;
+  }
+
+  .profile-stat {
+    min-height: 90px;
+  }
+
+  .profile-stat strong {
+    font-size: 20px;
+  }
+
+  .profile-section {
+    padding: 32px 20px;
+  }
+
+  .profile-section-heading h2 {
+    font-size: 23px;
+  }
+
+  .project-image-wrapper {
+    height: 180px;
+  }
+}
+/* =========================================================
+   BUILDORBIT PUBLIC PROFILE — FINAL PURPLE OVERRIDE
+   ========================================================= */
+
+.profile-page {
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(124, 58, 237, 0.16),
+      transparent 38%
+    ),
+    #0F0B1A !important;
+
+  color: #F5F3FF;
+}
+
+.profile-card {
+  border-color: #2A2340 !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(24, 19, 41, 0.96),
+      rgba(15, 11, 29, 0.98)
+    ) !important;
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.38),
+    0 0 45px rgba(124, 58, 237, 0.05) !important;
+}
+
+.profile-hero {
+  border-bottom-color: #2A2340 !important;
+
+  background:
+    radial-gradient(
+      circle at 12% 30%,
+      rgba(124, 58, 237, 0.14),
+      transparent 32%
+    ) !important;
+}
+
+.profile-hero::after {
+  border-color: rgba(167, 139, 250, 0.08) !important;
+}
+
+.profile-avatar {
+  border-color: rgba(167, 139, 250, 0.35) !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      #7C3AED,
+      #4C1D95
+    ) !important;
+
+  box-shadow:
+    0 16px 40px rgba(124, 58, 237, 0.28) !important;
+}
+
+.section-label {
+  color: #A78BFA !important;
+}
+
+.profile-role-badge {
+  border-color: rgba(167, 139, 250, 0.28) !important;
+
+  background: rgba(124, 58, 237, 0.10) !important;
+
+  color: #C4B5FD !important;
+}
+
+.role-dot {
+  background: #A78BFA !important;
+
+  box-shadow:
+    0 0 10px rgba(167, 139, 250, 0.7) !important;
+}
+
+.profile-social-button {
+  border-color: rgba(124, 58, 237, 0.25) !important;
+
+  background: rgba(124, 58, 237, 0.06) !important;
+
+  color: #E9E4FF !important;
+}
+
+.profile-social-button:hover {
+  border-color: #8B5CF6 !important;
+
+  background: rgba(124, 58, 237, 0.12) !important;
+}

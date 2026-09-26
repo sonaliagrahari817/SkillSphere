@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
 import { useAuth } from "../context/AuthContext"
 import { useToast } from "../context/ToastContext"
@@ -7,7 +8,7 @@ import "./EditProfile.css"
 function EditProfile() {
   const { user, login } = useAuth()
   const { showToast } = useToast()
-
+  const navigate = useNavigate()
   const [name, setName] = useState(user?.name || "")
   const [bio, setBio] = useState(user?.bio || "")
   const [skills, setSkills] = useState(user?.skills || "")
@@ -28,7 +29,7 @@ function EditProfile() {
       setSaving(true)
 
       const response = await fetch(
-        `https://skillsphere-backend-puyd.onrender.com/api/auth/profile/${user.id}`,
+        `http://localhost:5000/api/auth/profile/${user.id}`,
         {
           method: "PUT",
           headers: {
@@ -63,6 +64,7 @@ function EditProfile() {
         "Profile updated successfully!",
         "success"
       )
+      navigate("/profile")
     } catch (error) {
       console.error(
         "Profile update error:",
@@ -120,7 +122,7 @@ function EditProfile() {
           </h1>
 
           <p>
-            Tell the SkillSphere community who
+            Tell the BuildOrbit community who
             you are and what you build.
           </p>
 
@@ -150,7 +152,7 @@ function EditProfile() {
                     </h2>
 
                     <p>
-                      Your public identity on SkillSphere.
+                      Your public identity on BuildOrbit.
                     </p>
 
                   </div>

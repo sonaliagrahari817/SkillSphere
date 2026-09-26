@@ -1,0 +1,457 @@
+/* =========================================================
+   BUILDORBIT - EDIT PROJECT PAGE
+   Scoped only to EditProject existing classes
+   ========================================================= */
+
+
+/* =========================
+   PAGE
+========================= */
+
+.profile-page {
+  min-height: 100vh;
+
+  box-sizing: border-box;
+
+  padding: 64px 24px 90px;
+
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(124, 58, 237, 0.15),
+      transparent 38%
+    ),
+    #0F0B1A;
+
+  color: #F5F3FF;
+}
+
+
+/* =========================
+   EDIT PROJECT CARD
+========================= */
+
+.profile-page .edit-profile-card {
+  width: min(760px, 100%);
+
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  padding: 40px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #2A2340;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(24, 19, 41, 0.97),
+      rgba(15, 11, 29, 0.99)
+    );
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.34),
+    0 0 45px rgba(124, 58, 237, 0.06);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.profile-page .edit-profile-card .section-label {
+  margin: 0 0 12px;
+
+  color: #A78BFA;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+.profile-page .edit-profile-card > h1 {
+  margin: 0 0 10px;
+
+  color: #F5F3FF;
+
+  font-size: clamp(36px, 5vw, 50px);
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+
+  text-align: left;
+}
+
+.profile-page .edit-profile-card > .profile-bio {
+  margin: 0 0 32px;
+
+  color: #A8A3B8;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  text-align: left;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.profile-page .edit-profile-card form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  width: 100%;
+
+  margin: 0;
+
+  text-align: left;
+}
+
+
+/* =========================
+   LABELS
+========================= */
+
+.profile-page .edit-profile-card form label {
+  display: block;
+
+  width: 100%;
+
+  margin-top: 12px;
+
+  margin-bottom: 3px;
+
+  color: #DDD6FE;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  text-align: left;
+}
+
+.profile-page .edit-profile-card form label:first-of-type {
+  margin-top: 0;
+}
+
+
+/* =========================
+   INPUTS + TEXTAREA
+========================= */
+
+.profile-page .edit-profile-card form input,
+.profile-page .edit-profile-card form textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #2A2340;
+
+  border-radius: 11px;
+
+  outline: none;
+
+  background: rgba(15, 11, 29, 0.82);
+
+  color: #F5F3FF;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.profile-page .edit-profile-card form input {
+  height: 49px;
+
+  padding: 0 15px;
+}
+
+.profile-page .edit-profile-card form textarea {
+  min-height: 145px;
+
+  padding: 13px 15px;
+
+  resize: vertical;
+
+  line-height: 1.6;
+}
+
+.profile-page .edit-profile-card form input::placeholder,
+.profile-page .edit-profile-card form textarea::placeholder {
+  color: #6F6882;
+}
+
+.profile-page .edit-profile-card form input:focus,
+.profile-page .edit-profile-card form textarea:focus {
+  border-color: #8B5CF6;
+
+  background: rgba(24, 19, 41, 0.90);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(124, 58, 237, 0.10);
+}
+
+
+/* =========================
+   FILE INPUT
+========================= */
+
+.profile-page .edit-profile-card form input[type="file"] {
+  height: auto;
+
+  min-height: 48px;
+
+  padding: 10px;
+
+  border: 1px dashed #3A3156;
+
+  background: rgba(124, 58, 237, 0.035);
+
+  color: #A8A3B8;
+
+  cursor: pointer;
+}
+
+.profile-page .edit-profile-card form input[type="file"]:hover {
+  border-color: #8B5CF6;
+
+  background: rgba(124, 58, 237, 0.06);
+}
+
+.profile-page .edit-profile-card form input[type="file"]::file-selector-button {
+  margin-right: 12px;
+
+  padding: 8px 14px;
+
+  border: 1px solid #7C3AED;
+
+  border-radius: 8px;
+
+  background: #7C3AED;
+
+  color: #FFFFFF;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.profile-page .edit-profile-card form input[type="file"]::file-selector-button:hover {
+  background: #8B5CF6;
+
+  border-color: #8B5CF6;
+}
+
+
+/* =========================
+   EXISTING IMAGE PREVIEW
+========================= */
+
+.profile-page .edit-profile-card form > div {
+  width: 100%;
+
+  margin-top: 12px !important;
+}
+
+.profile-page .edit-profile-card form > div img {
+  display: block;
+
+  width: 100% !important;
+
+  max-width: 100%;
+
+  max-height: 250px !important;
+
+  object-fit: cover;
+
+  border: 1px solid #2A2340;
+
+  border-radius: 12px;
+
+  background: #0F0B1A;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =========================
+   SAVE BUTTON
+========================= */
+
+.profile-page .edit-profile-card form .auth-submit {
+  width: 100%;
+
+  min-height: 49px;
+
+  margin-top: 22px;
+
+  padding: 12px 18px;
+
+  border: 1px solid #7C3AED;
+
+  border-radius: 10px;
+
+  background: #7C3AED;
+
+  color: #FFFFFF;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.profile-page .edit-profile-card form .auth-submit:hover:not(:disabled) {
+  background: #8B5CF6;
+
+  border-color: #8B5CF6;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 28px
+    rgba(124, 58, 237, 0.20);
+}
+
+.profile-page .edit-profile-card form .auth-submit:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* =========================
+   LOGIN / LOADING STATES
+========================= */
+
+.profile-page .profile-card:not(.edit-profile-card) {
+  width: min(760px, 100%);
+
+  margin: 70px auto 0;
+
+  padding: 45px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #2A2340;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(24, 19, 41, 0.96),
+      rgba(15, 11, 29, 0.99)
+    );
+
+  color: #F5F3FF;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.30);
+
+  text-align: center;
+}
+
+.profile-page .profile-card:not(.edit-profile-card) h1 {
+  margin: 0 0 10px;
+
+  color: #F5F3FF;
+}
+
+.profile-page .profile-card:not(.edit-profile-card) p {
+  margin: 0;
+
+  color: #A8A3B8;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .profile-page {
+    padding: 42px 18px 70px;
+  }
+
+  .profile-page .edit-profile-card {
+    padding: 28px 21px;
+
+    border-radius: 19px;
+  }
+
+  .profile-page .edit-profile-card > h1 {
+    font-size: 36px;
+
+    letter-spacing: -1.4px;
+  }
+
+  .profile-page .edit-profile-card > .profile-bio {
+    margin-bottom: 26px;
+  }
+
+  .profile-page .edit-profile-card form input,
+  .profile-page .edit-profile-card form textarea {
+    font-size: 13px;
+  }
+
+  .profile-page .edit-profile-card form input {
+    height: 47px;
+  }
+
+  .profile-page .edit-profile-card form textarea {
+    min-height: 125px;
+  }
+
+  .profile-page .edit-profile-card form > div img {
+    max-height: 210px !important;
+  }
+
+  .profile-page .edit-profile-card form .auth-submit {
+    margin-top: 18px;
+  }
+}

@@ -18,7 +18,7 @@ function MyProjects() {
     const fetchProjects = async () => {
       try {
         const response = await fetch(
-          "https://skillsphere-backend-puyd.onrender.com/api/projects"
+          "http://localhost:5000/api/projects"
         )
 
         const data = await response.json()
@@ -89,7 +89,7 @@ function MyProjects() {
       }
 
       const response = await fetch(
-        `https://skillsphere-backend-puyd.onrender.com/api/projects/${deleteProjectId}`,
+        `http://localhost:5000/api/projects/${deleteProjectId}`,
         {
           method: "DELETE",
           headers: {
@@ -270,7 +270,7 @@ function MyProjects() {
 
             <p>
               Create your first project and
-              share it with the SkillSphere
+              share it with the BuildOrbit
               community.
             </p>
 
@@ -293,7 +293,7 @@ function MyProjects() {
               const imageUrl =
                 project.image?.startsWith("http")
                   ? project.image
-                  : `https://skillsphere-backend-puyd.onrender.com${project.image}`
+                  : `http://localhost:5000${project.image}`
 
               return (
                 <article

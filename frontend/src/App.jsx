@@ -1,4 +1,8 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom"
 
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
@@ -16,122 +20,175 @@ import EditProject from "./pages/EditProject"
 import ProjectDetails from "./pages/ProjectDetails"
 import NotFound from "./pages/NotFound"
 import StateExample from "./pages/StateExample"
+import SkillAssessment from "./pages/SkillAssessment"
+import UserProfile from "./pages/UserProfile"
+import SavedProjects from "./pages/SavedProjects"
 
-import { AuthProvider } from "./context/AuthContext"
+import {
+  AuthProvider
+} from "./context/AuthContext"
+
+import Toast from "./components/Toast"
+
+import {
+  ToastProvider
+} from "./context/ToastContext"
 
 import "./App.css"
-import UserProfile from "./pages/UserProfile"
-import Toast from "./components/Toast"
-import { ToastProvider } from "./context/ToastContext"
+
 
 function App() {
   return (
+
     <AuthProvider>
+
       <ToastProvider>
-       <BrowserRouter>
-        <Navbar />
 
-        <Routes>
+        <BrowserRouter>
 
-          {/* PUBLIC ROUTES */}
-
-          <Route
-            path="/"
-            element={<Home />}
-          />
-
-          <Route
-            path="/login"
-            element={<Login />}
-          />
-
-          <Route
-            path="/signup"
-            element={<Signup />}
-          />
-
-          <Route
-            path="/explore"
-            element={<Explore />}
-          />
-
-          <Route
-            path="/project/:id"
-            element={<ProjectDetails />}
-          />
-
-          <Route
-            path="/state-test"
-            element={<StateExample />}
-          />
+          <Navbar />
 
 
-          {/* PROTECTED ROUTES */}
-           
-          <Route
-            path="/profile"
-            element={
-              <ProtectedRoute>
-                <Profile />
-              </ProtectedRoute>
-            }
-          />
+          <Routes>
 
-          <Route
-            path="/edit-profile"
-            element={
-              <ProtectedRoute>
-                <EditProfile />
-              </ProtectedRoute>
-            }
-          />
+            {/* =========================
+                PUBLIC ROUTES
+            ========================= */}
 
-          <Route
-            path="/create-project"
-            element={
-              <ProtectedRoute>
-                <CreateProject />
-              </ProtectedRoute>
-            }
-          />
+            <Route
+              path="/"
+              element={<Home />}
+            />
 
-          <Route
-            path="/my-projects"
-            element={
-              <ProtectedRoute>
-                <MyProjects />
-              </ProtectedRoute>
-            }
-          />
+            <Route
+              path="/login"
+              element={<Login />}
+            />
 
-          <Route
-            path="/edit-project/:id"
-            element={
-              <ProtectedRoute>
-                <EditProject />
-              </ProtectedRoute>
-            }
-          />
+            <Route
+              path="/signup"
+              element={<Signup />}
+            />
+
+            <Route
+              path="/explore"
+              element={<Explore />}
+            />
+
+            <Route
+              path="/project/:id"
+              element={<ProjectDetails />}
+            />
+
+            <Route
+              path="/state-test"
+              element={<StateExample />}
+            />
+
+            <Route
+              path="/user/:id"
+              element={<UserProfile />}
+            />
 
 
-          {/* 404 */}
+            {/* =========================
+                PROTECTED ROUTES
+            ========================= */}
 
-          <Route
-            path="*"
-            element={<NotFound />}
-          />
-          <Route
-            path="/user/:id"
-            element={<UserProfile />}
-          />
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoute>
+                  <Profile />
+                </ProtectedRoute>
+              }
+            />
 
-        </Routes>
 
-        <Footer />
+            <Route
+              path="/skill-assessment"
+              element={
+                <ProtectedRoute>
+                  <SkillAssessment />
+                </ProtectedRoute>
+              }
+            />
 
-      </BrowserRouter>
-    </ToastProvider>
-  </AuthProvider>
+
+            <Route
+              path="/edit-profile"
+              element={
+                <ProtectedRoute>
+                  <EditProfile />
+                </ProtectedRoute>
+              }
+            />
+
+
+            <Route
+              path="/create-project"
+              element={
+                <ProtectedRoute>
+                  <CreateProject />
+                </ProtectedRoute>
+              }
+            />
+
+
+            <Route
+              path="/my-projects"
+              element={
+                <ProtectedRoute>
+                  <MyProjects />
+                </ProtectedRoute>
+              }
+            />
+
+
+            <Route
+              path="/edit-project/:id"
+              element={
+                <ProtectedRoute>
+                  <EditProject />
+                </ProtectedRoute>
+              }
+            />
+
+
+            {/* =========================
+                SAVED PROJECTS
+            ========================= */}
+
+            <Route
+              path="/saved-projects"
+              element={
+                <ProtectedRoute>
+                  <SavedProjects />
+                </ProtectedRoute>
+              }
+            />
+
+
+            {/* =========================
+                404
+            ========================= */}
+
+            <Route
+              path="*"
+              element={<NotFound />}
+            />
+
+          </Routes>
+
+
+          <Footer />
+
+        </BrowserRouter>
+
+      </ToastProvider>
+
+    </AuthProvider>
+
   )
 }
 

@@ -1,6 +1,6 @@
-# SkillSphere
+# BuildOrbit
 
-SkillSphere is a full-stack community platform where developers and creators can showcase their projects, build professional profiles, discover other people's work, and interact through likes and comments.
+BuildOrbit is a full-stack community platform where developers and creators can showcase their projects, build professional profiles, discover other people's work, and interact through likes and comments.
 
 ## ✨ Features
 
@@ -30,12 +30,14 @@ SkillSphere is a full-stack community platform where developers and creators can
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - React
 - React Router
 - JavaScript
 - CSS
 
 ### Backend
+
 - Node.js
 - Express.js
 - MongoDB
@@ -46,7 +48,7 @@ SkillSphere is a full-stack community platform where developers and creators can
 ## 📁 Project Structure
 
 ```text
-SkillSphere/
+BuildOrbit/
 │
 ├── frontend/
 │   ├── src/
@@ -67,3 +69,4 @@ SkillSphere/
 │   └── package.json
 │
 └── README.md
+```

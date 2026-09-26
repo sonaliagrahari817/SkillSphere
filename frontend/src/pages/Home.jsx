@@ -12,7 +12,7 @@ function Home() {
     const fetchProjects = async () => {
       try {
         const response = await fetch(
-          "https://skillsphere-backend-puyd.onrender.com/api/projects"
+          "http://localhost:5000/api/projects"
         )
 
         const data = await response.json()
@@ -32,7 +32,7 @@ function Home() {
     const fetchCreators = async () => {
       try {
         const response = await fetch(
-          "https://skillsphere-backend-puyd.onrender.com/api/auth/users"
+          "http://localhost:5000/api/auth/users"
         )
 
         const data = await response.json()
@@ -69,7 +69,7 @@ function Home() {
           </h1>
 
           <p className="hero-text">
-            SkillSphere is a community for developers
+            BuildOrbit is a community for developers
             and creators to showcase projects, discover
             talent, and connect through what they build.
           </p>
@@ -87,7 +87,7 @@ function Home() {
               to="/signup"
               className="secondary-btn"
             >
-              Join SkillSphere
+              Join BuildOrbit
             </Link>
 
           </div>
@@ -116,12 +116,12 @@ function Home() {
       </section>
 
 
-      {/* WHY SKILLSPHERE */}
+      {/* WHY BuildOrbit */}
 
       <section className="about-section">
 
         <p className="section-label">
-          WHY SKILLSPHERE?
+          WHY BuildOrbit?
         </p>
 
         <h2>
@@ -299,7 +299,7 @@ function Home() {
 
         <p>
           Create your profile, showcase your work
-          and become part of SkillSphere.
+          and become part of BuildOrbit.
         </p>
 
         <Link

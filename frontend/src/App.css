@@ -1,6 +1,20 @@
 * {
   box-sizing: border-box;
 }
+:root {
+  --bg-main: #0F0B1A;
+  --bg-card: #181329;
+  --bg-dark: #0B0812;
+
+  --primary: #7C3AED;
+  --primary-light: #A78BFA;
+  --primary-hover: #8B5CF6;
+
+  --text-main: #F5F3FF;
+  --text-muted: #A8A3B8;
+
+  --border: #2A2340;
+}
 
 body {
   margin: 0;
@@ -54,7 +68,7 @@ color: #f8fafc;
   font-weight: 500;
 }
 .nav-links a:hover {
-  color: #60a5fa;
+  color: #A78BFA;
 }
 .hero {
   position: relative;
@@ -72,7 +86,7 @@ color: #f8fafc;
   width: 420px;
   height: 420px;
   border-radius: 50%;
-  background: #2563eb;
+  background: #7C3AED;
   filter: blur(120px);
   opacity: 0.35;
 }
@@ -102,7 +116,7 @@ color: #f8fafc;
 }
 
 .hero h1 span {
-  color: #60a5fa;
+  color: #A78BFA;
 }
 .hero-text {
   max-width: 600px;
@@ -129,7 +143,7 @@ color: #f8fafc;
 }
 
 .primary-btn {
-  background: #2563eb;
+  background: #7C3AED;
   color: white;
 }
 
@@ -146,7 +160,7 @@ color: #f8fafc;
 
 .secondary-btn:hover {
   transform: translateY(-3px);
-  border-color: #60a5fa;
+  border-color: #A78BFA;
 }
 .project-card {
   padding: 28px;
@@ -159,7 +173,7 @@ color: #f8fafc;
 
 .project-card:hover {
   transform: translateY(-8px) scale(1.01);
-  border-color: #3b82f6;
+  border-color: #8B5CF6;
   box-shadow:
     0 20px 50px rgba(37, 99, 235, 0.12);
 }
@@ -186,7 +200,7 @@ color: #f8fafc;
 }
 
 .project-card button:hover {
-  background: #2563eb;
+  background: #7C3AED;
 }
 .section {
   max-width: 1150px;
@@ -243,7 +257,7 @@ main p {
 }
 
 .section-label {
-  color: #2563eb !important;
+  color: #7C3AED !important;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 3px;
@@ -284,7 +298,7 @@ main p {
 }
 
 .section-label {
-  color: #60a5fa !important;
+  color: #A78BFA !important;
 }
 .project-card h2 {
   color: #f8fafc !important;
@@ -329,7 +343,7 @@ main h2 {
 
 .user-card:hover {
   transform: translateY(-8px);
-  border-color: #3b82f6;
+  border-color: #8B5CF6;
   box-shadow: 0 20px 45px rgba(37, 99, 235, 0.15);
 }
 
@@ -341,7 +355,7 @@ main h2 {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  background: linear-gradient(135deg, #7C3AED, #7c3aed);
   color: white;
   font-size: 26px;
   font-weight: 700;
@@ -363,7 +377,7 @@ main h2 {
   padding: 7px 14px;
   border-radius: 999px;
   background: rgba(37, 99, 235, 0.15);
-  color: #60a5fa;
+  color: #A78BFA;
   font-size: 13px;
   font-weight: 600;
 }
@@ -445,13 +459,13 @@ main h2 {
 
 .skill-filters button:hover {
   color: #f8fafc;
-  border-color: #3b82f6;
+  border-color: #8B5CF6;
   transform: translateY(-2px);
 }
 
 .skill-filters button.active {
-  background: #2563eb;
-  border-color: #2563eb;
+  background: #7C3AED;
+  border-color: #7C3AED;
   color: white;
   box-shadow: 0 8px 25px rgba(37, 99, 235, 0.25);
 }
@@ -470,7 +484,7 @@ input[type="text"] {
 
 .search-bar:focus,
 input[type="text"]:focus {
-  border-color: #3b82f6;
+  border-color: #8B5CF6;
   box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
 }
 
@@ -489,7 +503,7 @@ input[type="text"]::placeholder {
 .project-details-page {
   min-height: 100vh;
   padding: 80px 24px;
-  background: #080d1c;
+  background: #0F0B1A;
 }
 
 .project-details {
@@ -525,7 +539,7 @@ input[type="text"]::placeholder {
   padding: 8px 15px;
   border-radius: 999px;
   background: rgba(37, 99, 235, 0.15);
-  color: #60a5fa;
+  color: #A78BFA;
 }
 .project-actions {
   display: flex;
@@ -536,7 +550,7 @@ input[type="text"]::placeholder {
 .project-actions button {
   padding: 13px 22px;
   border-radius: 12px;
-  background: #2563eb;
+  background: #7C3AED;
   color: white;
   font-weight: 600;
 }
@@ -567,7 +581,7 @@ input[type="text"]::placeholder {
 }
 
 .comment strong {
-  color: #60a5fa;
+  color: #A78BFA;
 }
 
 .comment p {
@@ -591,13 +605,13 @@ input[type="text"]::placeholder {
 }
 
 .comment-form input:focus {
-  border-color: #3b82f6;
+  border-color: #8B5CF6;
 }
 
 .comment-form button {
   padding: 12px 18px;
   border-radius: 12px;
-  background: #2563eb;
+  background: #7C3AED;
   color: white;
   font-weight: 600;
 }
@@ -682,7 +696,7 @@ input[type="text"]::placeholder {
 }
 
 .auth-card input:focus {
-  border-color: #3b82f6;
+  border-color: #8B5CF6;
   box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
 }
 
@@ -705,7 +719,7 @@ input[type="text"]::placeholder {
 }
 
 .auth-card select:focus {
-  border-color: #3b82f6;
+  border-color: #8B5CF6;
   box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
 }
 
@@ -715,7 +729,7 @@ input[type="text"]::placeholder {
   padding: 14px;
   border: none;
   border-radius: 12px;
-  background: #2563eb;
+  background: #7C3AED;
   color: white;
   font-size: 15px;
   font-weight: 700;
@@ -725,7 +739,7 @@ input[type="text"]::placeholder {
 
 .auth-submit:hover {
   transform: translateY(-2px);
-  background: #3b82f6;
+  background: #8B5CF6;
   box-shadow: 0 12px 30px rgba(37, 99, 235, 0.25);
 }
 /* Profile */
@@ -761,7 +775,7 @@ input[type="text"]::placeholder {
 }
 
 .profile-role {
-  color: #60a5fa !important;
+  color: #A78BFA !important;
   font-size: 18px;
   font-weight: 700;
   margin: 0;
@@ -803,7 +817,7 @@ input[type="text"]::placeholder {
 
 .skills-list span:hover {
   transform: translateY(-2px);
-  border-color: #3b82f6;
+  border-color: #8B5CF6;
   background: rgba(37, 99, 235, 0.18);
 }
 .edit-profile-btn {
@@ -811,7 +825,7 @@ input[type="text"]::placeholder {
   margin-top: 18px;
   padding: 10px 18px;
   border-radius: 10px;
-  background: #2563eb;
+  background: #7C3AED;
   color: white;
   text-decoration: none;
   font-weight: 600;
@@ -819,7 +833,7 @@ input[type="text"]::placeholder {
 }
 
 .edit-profile-btn:hover {
-  background: #3b82f6;
+  background: #8B5CF6;
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
 }
@@ -851,19 +865,27 @@ input[type="text"]::placeholder {
   width: 100%;
   box-sizing: border-box;
   padding: 15px 18px;
-  border: 1px solid #263452;
+  border: 1px solid #2A2340;
   border-radius: 12px;
-  background: #0f172a;
-  color: #f8fafc;
+  background: rgba(15, 11, 29, 0.78);
+  color: #F5F3FF;
   font-size: 16px;
   font-family: inherit;
   outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 .edit-profile-card form input:focus,
 .edit-profile-card form textarea:focus,
 .edit-profile-card form select:focus {
-  border-color: #3b82f6;
+  border-color: #8B5CF6;
+  background: rgba(24, 19, 41, 0.88);
+  box-shadow:
+    0 0 0 3px
+    rgba(124, 58, 237, 0.10);
 }
 
 .edit-profile-card form textarea {
@@ -882,7 +904,7 @@ input[type="text"]::placeholder {
   padding: 15px;
   border: none;
   border-radius: 12px;
-  background: #2563eb;
+  background: #7C3AED;
   color: white;
   font-size: 17px;
   font-weight: 700;
@@ -890,14 +912,38 @@ input[type="text"]::placeholder {
 }
 
 .edit-profile-card .auth-submit:hover {
-  background: #3b82f6;
+  background: #8B5CF6;
+}
+.edit-profile-card form input[type="file"] {
+  padding: 12px;
+  cursor: pointer;
+  background: rgba(24, 19, 41, 0.72);
+  border: 1px dashed #2A2340;
+}
+
+.edit-profile-card form input[type="file"]:hover {
+  border-color: #8B5CF6;
+  background: rgba(124, 58, 237, 0.06);
+}
+
+.edit-profile-card form input[type="file"]::file-selector-button {
+  margin-right: 12px;
+  padding: 8px 14px;
+  border: 1px solid #7C3AED;
+  border-radius: 8px;
+  background: #7C3AED;
+  color: #ffffff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
 }
 .view-project-btn {
   display: inline-block;
   margin-top: 15px;
   padding: 10px 18px;
   border-radius: 10px;
-  background: #2563eb;
+  background: #7C3AED;
   color: white;
   text-decoration: none;
   font-weight: 600;
@@ -905,7 +951,7 @@ input[type="text"]::placeholder {
 }
 
 .view-project-btn:hover {
-  background: #3b82f6;
+  background: #8B5CF6;
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
 }

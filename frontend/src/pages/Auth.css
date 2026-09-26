@@ -8,6 +8,14 @@
   box-sizing: border-box;
 
   padding: 55px 7% 80px;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(124, 58, 237, 0.14),
+      transparent 32%
+    ),
+    #0F0B1A;
 }
 
 .auth-layout {
@@ -36,7 +44,7 @@
 
   margin-bottom: 70px;
 
-  color: #f8fafc;
+  color: #F5F3FF;
 
   font-size: 23px;
   font-weight: 800;
@@ -44,16 +52,24 @@
   letter-spacing: -0.5px;
 
   text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.auth-brand:hover {
+  color: #A78BFA;
 }
 
 .auth-brand span {
-  color: #60a5fa;
+  color: #A78BFA;
 }
 
 .auth-intro h1 {
   margin: 12px 0 22px;
 
-  color: #f8fafc;
+  color: #F5F3FF;
 
   font-size: clamp(46px, 6vw, 70px);
 
@@ -63,7 +79,7 @@
 }
 
 .auth-intro h1 span {
-  color: #60a5fa;
+  color: #A78BFA;
 }
 
 .auth-intro-text {
@@ -71,7 +87,7 @@
 
   margin: 0;
 
-  color: #64748b;
+  color: #A8A3B8;
 
   font-size: 15px;
 
@@ -85,13 +101,13 @@
 
   margin-top: 45px;
 
-  color: #334155;
+  color: #4B4560;
 
   font-size: 20px;
 }
 
 .auth-decoration span:nth-child(1) {
-  color: #60a5fa;
+  color: #A78BFA;
 }
 
 
@@ -104,19 +120,19 @@
 
   padding: 36px;
 
-  border: 1px solid #263452;
+  border: 1px solid #2A2340;
   border-radius: 22px;
 
   background:
     linear-gradient(
       145deg,
-      rgba(15, 23, 42, 0.98),
-      rgba(11, 18, 34, 0.98)
+      rgba(24, 19, 41, 0.96),
+      rgba(15, 11, 29, 0.98)
     );
 
   box-shadow:
-    0 25px 70px
-    rgba(0, 0, 0, 0.22);
+    0 25px 70px rgba(0, 0, 0, 0.30),
+    0 0 35px rgba(124, 58, 237, 0.05);
 }
 
 .auth-card-header {
@@ -126,7 +142,7 @@
 .auth-card-header h2 {
   margin: 9px 0 9px;
 
-  color: #f8fafc;
+  color: #F5F3FF;
 
   font-size: 29px;
 
@@ -136,7 +152,7 @@
 .auth-subtitle {
   margin: 0;
 
-  color: #64748b;
+  color: #A8A3B8;
 
   font-size: 13px;
 
@@ -161,7 +177,7 @@
 }
 
 .auth-field label {
-  color: #cbd5e1;
+  color: #DDD6FE;
 
   font-size: 12px;
   font-weight: 700;
@@ -176,14 +192,14 @@
 
   padding: 0 13px;
 
-  border: 1px solid #263452;
+  border: 1px solid #2A2340;
   border-radius: 9px;
 
   outline: none;
 
-  background: #0b1222;
+  background: rgba(15, 11, 29, 0.78);
 
-  color: #f8fafc;
+  color: #F5F3FF;
 
   font: inherit;
 
@@ -191,20 +207,23 @@
 
   transition:
     border-color 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 .auth-field input::placeholder {
-  color: #475569;
+  color: #6F6882;
 }
 
 .auth-field input:focus,
 .auth-field select:focus {
-  border-color: #60a5fa;
+  border-color: #8B5CF6;
+
+  background: rgba(24, 19, 41, 0.88);
 
   box-shadow:
     0 0 0 3px
-    rgba(96, 165, 250, 0.08);
+    rgba(124, 58, 237, 0.10);
 }
 
 .auth-field select {
@@ -212,9 +231,9 @@
 }
 
 .auth-field select option {
-  background: #0f172a;
+  background: #181329;
 
-  color: #f8fafc;
+  color: #F5F3FF;
 }
 
 
@@ -228,12 +247,12 @@
 
   margin-top: 5px;
 
-  border: 1px solid #2563eb;
+  border: 1px solid #7C3AED;
   border-radius: 9px;
 
-  background: #2563eb;
+  background: #7C3AED;
 
-  color: #ffffff;
+  color: #FFFFFF;
 
   font: inherit;
 
@@ -244,19 +263,33 @@
 
   transition:
     background 0.2s ease,
+    border-color 0.2s ease,
     transform 0.2s ease,
     box-shadow 0.2s ease;
 }
 
 .auth-card .auth-submit:hover,
 .auth-card button[type="submit"]:hover {
-  background: #1d4ed8;
+  background: #8B5CF6;
+
+  border-color: #8B5CF6;
 
   transform: translateY(-1px);
 
   box-shadow:
     0 8px 25px
-    rgba(37, 99, 235, 0.2);
+    rgba(124, 58, 237, 0.20);
+}
+
+.auth-card .auth-submit:disabled,
+.auth-card button[type="submit"]:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
 }
 
 
@@ -272,24 +305,26 @@
   margin-top: 25px;
   padding-top: 22px;
 
-  border-top: 1px solid
-    rgba(148, 163, 184, 0.1);
+  border-top: 1px solid #2A2340;
 
-  color: #64748b;
+  color: #A8A3B8;
 
   font-size: 12px;
 }
 
 .auth-footer a {
-  color: #60a5fa;
+  color: #A78BFA;
 
   text-decoration: none;
 
   font-weight: 700;
+
+  transition:
+    color 0.2s ease;
 }
 
 .auth-footer a:hover {
-  color: #93c5fd;
+  color: #C4B5FD;
 }
 
 

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useAuth } from "../context/AuthContext"
 import { useToast } from "../context/ToastContext"
 import Button from "../components/Button"
@@ -11,7 +11,7 @@ function Signup() {
   const [password, setPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
   const [role, setRole] = useState("")
-
+  const navigate = useNavigate()
   const { login } = useAuth()
   const { showToast } = useToast()
 
@@ -28,7 +28,7 @@ function Signup() {
 
     try {
       const response = await fetch(
-        "https://skillsphere-backend-puyd.onrender.com/api/auth/signup",
+       "http://localhost:5000/api/auth/signup",
         {
           method: "POST",
           headers: {
@@ -50,12 +50,13 @@ function Signup() {
         return
       }
 
-      login(data.user)
+      login(data.user, data.token)
 
       showToast(
         "Account created successfully!",
         "success"
       )
+      navigate("/")
     } catch (error) {
       console.error(
         "Signup error:",
@@ -82,7 +83,7 @@ function Signup() {
             to="/"
             className="auth-brand"
           >
-            Skill<span>Sphere</span>
+            Build<span>Orbit</span>
           </Link>
 
           <p className="section-label">
