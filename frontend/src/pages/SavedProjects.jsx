@@ -21,7 +21,7 @@ function SavedProjects() {
       }
 
       const response = await fetch(
-        "http://localhost:5000/api/projects/saved/my-projects",
+        `${import.meta.env.VITE_API_URL}/api/projects/saved/my-projects`,
         {
           headers: {
             Authorization:
@@ -76,7 +76,7 @@ function SavedProjects() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/projects/${projectId}/save`,
+        `${import.meta.env.VITE_API_URL}/api/projects/${projectId}/save`,
         {
           method: "POST",
 
@@ -237,7 +237,7 @@ function SavedProjects() {
                   "http"
                 )
                   ? project.image
-                  : `http://localhost:5000${project.image}`
+                  : `${import.meta.env.VITE_API_URL}${project.image}`
 
               return (
 

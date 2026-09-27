@@ -31,7 +31,7 @@ function EditProject() {
 
       try {
         const response = await fetch(
-          `http://localhost:5000/api/projects/${id}`
+          `${import.meta.env.VITE_API_URL}/api/projects/${id}`
         )
 
         const data = await response.json()
@@ -142,7 +142,7 @@ function EditProject() {
       }
 
       const response = await fetch(
-        `http://localhost:5000/api/projects/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/projects/${id}`,
         {
           method: "PUT",
 

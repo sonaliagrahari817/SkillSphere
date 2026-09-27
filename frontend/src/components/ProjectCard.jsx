@@ -13,7 +13,7 @@ function ProjectCard({
 
   const imageUrl = image?.startsWith("http")
     ? image
-    : `http://localhost:5000${image}`
+    : `${import.meta.env.VITE_API_URL}${image}`
 
 
   // =========================
@@ -31,7 +31,7 @@ function ProjectCard({
 
       try {
         const response = await fetch(
-          "http://localhost:5000/api/projects/saved/my-projects",
+          `${import.meta.env.VITE_API_URL}/api/projects/saved/my-projects`,
           {
             headers: {
               Authorization:
@@ -93,7 +93,7 @@ function ProjectCard({
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/projects/${id}/save`,
+        `${import.meta.env.VITE_API_URL}/api/projects/${id}/save`,
         {
           method: "POST",
 

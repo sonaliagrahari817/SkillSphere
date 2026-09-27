@@ -6,7 +6,7 @@ import axios from "axios"
 const assessmentApi = axios.create({
   baseURL:
     window.location.hostname === "localhost"
-      ? "http://localhost:5000/api"
+      ? `${import.meta.env.VITE_API_URL}/api`
       : "https://BuildOrbit-backend-puyd.onrender.com/api"
 })
 

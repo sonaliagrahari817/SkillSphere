@@ -12,7 +12,7 @@ function Explore() {
     const fetchProjects = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/projects"
+          `${import.meta.env.VITE_API_URL}/api/projects`
         )
 
         const data = await response.json()
@@ -231,7 +231,7 @@ function Explore() {
               const imageUrl =
                 project.image?.startsWith("http")
                   ? project.image
-                  : `http://localhost:5000${project.image}`
+                  : `${import.meta.env.VITE_API_URL}${project.image}`
 
               return (
                 <article

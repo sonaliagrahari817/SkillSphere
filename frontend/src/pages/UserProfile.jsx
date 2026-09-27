@@ -15,10 +15,10 @@ function UserProfile() {
         const [userResponse, projectsResponse] =
           await Promise.all([
            fetch(
-            `http://localhost:5000/api/auth/users/${id}`
+            `${import.meta.env.VITE_API_URL}/api/auth/users/${id}`
           ),
           fetch(
-            "http://localhost:5000/api/projects"
+            `${import.meta.env.VITE_API_URL}/api/projects`
           )
           ])
 
@@ -334,7 +334,7 @@ function UserProfile() {
                             "http"
                           )
                             ? project.image
-                            : `http://localhost:5000${project.image}`
+                            : `${import.meta.env.VITE_API_URL}${project.image}`
                         }
                         alt={project.title}
                         className="my-project-image"

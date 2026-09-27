@@ -12,7 +12,7 @@ function Home() {
     const fetchProjects = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/projects"
+          `${import.meta.env.VITE_API_URL}/api/projects`
         )
 
         const data = await response.json()
@@ -32,7 +32,7 @@ function Home() {
     const fetchCreators = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/auth/users"
+          `${import.meta.env.VITE_API_URL}/api/auth/users`
         )
 
         const data = await response.json()

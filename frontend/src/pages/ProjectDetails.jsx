@@ -43,7 +43,7 @@ const [teamMemberSearchLoading, setTeamMemberSearchLoading] = useState(false)
     const fetchProject = async () => {
       try {
        const response = await fetch(
-  `http://localhost:5000/api/projects/${id}`
+  `${import.meta.env.VITE_API_URL}/api/projects/${id}`
 )
 
         const data = await response.json()
@@ -100,9 +100,9 @@ const [teamMemberSearchLoading, setTeamMemberSearchLoading] = useState(false)
 
         const response =
           await fetch(
-            `http://localhost:5000/api/auth/users?search=${encodeURIComponent(
-              teamMemberSearch.trim()
-            )}`
+           `${import.meta.env.VITE_API_URL}/api/auth/users?search=${encodeURIComponent(
+            teamMemberSearch.trim()
+          )}`
           )
 
         const data =
@@ -173,7 +173,7 @@ const [teamMemberSearchLoading, setTeamMemberSearchLoading] = useState(false)
 
       try {
         const response = await fetch(
-          "http://localhost:5000/api/projects/saved/my-projects",
+          `${import.meta.env.VITE_API_URL}/api/projects/saved/my-projects`,
           {
             headers: {
               Authorization:
@@ -237,7 +237,7 @@ const [teamMemberSearchLoading, setTeamMemberSearchLoading] = useState(false)
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/projects/${id}/like`,
+        `${import.meta.env.VITE_API_URL}/api/projects/${id}/like`,
         {
           method: "POST",
           headers: {
@@ -306,7 +306,7 @@ const [teamMemberSearchLoading, setTeamMemberSearchLoading] = useState(false)
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/projects/${id}/save`,
+        `${import.meta.env.VITE_API_URL}/api/projects/${id}/save`,
         {
           method: "POST",
           headers: {
@@ -373,7 +373,7 @@ const [teamMemberSearchLoading, setTeamMemberSearchLoading] = useState(false)
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/projects/${id}/comments`,
+        `${import.meta.env.VITE_API_URL}/api/projects/${id}/comments`,
         {
           method: "POST",
           headers: {
@@ -440,7 +440,7 @@ const handleDeleteComment = async (commentId) => {
 
   try {
     const response = await fetch(
-      `http://localhost:5000/api/projects/${id}/comments/${commentId}`,
+      `${import.meta.env.VITE_API_URL}/api/projects/${id}/comments/${commentId}`,
       {
         method: "DELETE",
         headers: {
@@ -545,7 +545,7 @@ const handleAddTeamMember = async () => {
 
     const response =
       await fetch(
-        `http://localhost:5000/api/projects/${id}/team-members`,
+        `${import.meta.env.VITE_API_URL}/api/projects/${id}/team-members`,
         {
           method: "POST",
 
@@ -665,7 +665,7 @@ const handleRemoveTeamMember = async (
 
     const response =
       await fetch(
-        `http://localhost:5000/api/projects/${id}/team-members/${memberId}`,
+        `${import.meta.env.VITE_API_URL}/api/projects/${id}/team-members/${memberId}`,
         {
           method: "DELETE",
 
@@ -812,7 +812,7 @@ const handleRemoveTeamMember = async (
   const imageUrl =
     project.image?.startsWith("http")
       ? project.image  
-      : `http://localhost:5000${project.image}`
+      : `${import.meta.env.VITE_API_URL}${project.image}`
 
 
   return (

@@ -49,7 +49,7 @@ function Profile() {
 
       try {
         const response = await fetch(
-          "http://localhost:5000/api/projects"
+          `${import.meta.env.VITE_API_URL}/api/projects`
         )
 
         const data = await response.json()
@@ -95,7 +95,7 @@ function Profile() {
         const token = localStorage.getItem("token")
 
         const response = await fetch(
-          "http://localhost:5000/api/projects/saved/my-projects",
+          `${import.meta.env.VITE_API_URL}/api/projects/saved/my-projects`,
           {
             headers: {
               Authorization: `Bearer ${token}`
@@ -140,7 +140,7 @@ function Profile() {
         const token = localStorage.getItem("token")
 
         const response = await fetch(
-          "http://localhost:5000/api/assessments/history",
+          `${import.meta.env.VITE_API_URL}/api/assessments/history`,
           {
             headers: {
               Authorization: `Bearer ${token}`
@@ -185,7 +185,7 @@ function Profile() {
         const token = localStorage.getItem("token")
 
         const response = await fetch(
-          "http://localhost:5000/api/assessments/analytics",
+          `${import.meta.env.VITE_API_URL}/api/assessments/analytics`,
           {
             headers: {
               Authorization: `Bearer ${token}`
@@ -230,7 +230,7 @@ function Profile() {
         const token = localStorage.getItem("token")
 
         const response = await fetch(
-          "http://localhost:5000/api/assessments/roadmap?skill=javascript",
+          `${import.meta.env.VITE_API_URL}/api/assessments/roadmap?skill=javascript`,
           {
             headers: {
               Authorization: `Bearer ${token}`
@@ -275,7 +275,7 @@ function Profile() {
         const token = localStorage.getItem("token")
 
         const response = await fetch(
-          "http://localhost:5000/api/assessments/roadmap/progress",
+          `${import.meta.env.VITE_API_URL}/api/assessments/roadmap/progress`,
           {
             headers: {
               Authorization: `Bearer ${token}`
@@ -331,7 +331,7 @@ function Profile() {
       setCompletedTopics(updatedTopics)
 
       const response = await fetch(
-        "http://localhost:5000/api/assessments/roadmap/progress",
+        `${import.meta.env.VITE_API_URL}/api/assessments/roadmap/progress`,
         {
           method: "PUT",
 

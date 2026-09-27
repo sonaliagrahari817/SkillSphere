@@ -29,7 +29,7 @@ function EditProfile() {
       setSaving(true)
 
       const response = await fetch(
-        `http://localhost:5000/api/auth/profile/${user.id}`,
+        `${import.meta.env.VITE_API_URL}/api/auth/profile/${user.id}`,
         {
           method: "PUT",
           headers: {

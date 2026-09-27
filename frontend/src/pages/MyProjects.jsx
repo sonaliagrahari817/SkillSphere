@@ -18,7 +18,7 @@ function MyProjects() {
     const fetchProjects = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/projects"
+          `${import.meta.env.VITE_API_URL}/api/projects`
         )
 
         const data = await response.json()
@@ -89,7 +89,7 @@ function MyProjects() {
       }
 
       const response = await fetch(
-        `http://localhost:5000/api/projects/${deleteProjectId}`,
+        `${import.meta.env.VITE_API_URL}/api/projects/${deleteProjectId}`,
         {
           method: "DELETE",
           headers: {
@@ -293,7 +293,7 @@ function MyProjects() {
               const imageUrl =
                 project.image?.startsWith("http")
                   ? project.image
-                  : `http://localhost:5000${project.image}`
+                  : `${import.meta.env.VITE_API_URL}${project.image}`
 
               return (
                 <article

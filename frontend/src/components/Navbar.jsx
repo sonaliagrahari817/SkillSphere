@@ -66,7 +66,7 @@ function Navbar() {
 
         const response =
           await fetch(
-            `http://localhost:5000/api/auth/users?search=${encodeURIComponent(
+            `${import.meta.env.VITE_API_URL}/api/auth/users?search=${encodeURIComponent(
               search.trim()
             )}`
           )
