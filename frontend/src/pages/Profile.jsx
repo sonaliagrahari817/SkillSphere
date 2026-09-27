@@ -1619,7 +1619,7 @@ function Profile() {
                       const imageUrl =
                         project.image?.startsWith("http")
                           ? project.image
-                          : `https://BuildOrbit-backend-puyd.onrender.com${project.image}`
+                          : `https://skillsphere-backend-puyd.onrender.com${project.image}`
 
                       return (
 

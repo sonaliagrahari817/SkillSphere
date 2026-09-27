@@ -7,7 +7,7 @@ const assessmentApi = axios.create({
   baseURL:
     window.location.hostname === "localhost"
       ? `${import.meta.env.VITE_API_URL}/api`
-      : "https://BuildOrbit-backend-puyd.onrender.com/api"
+      : "https://skillsphere-backend-puyd.onrender.com/api"
 })
 
 function SkillAssessment() {
