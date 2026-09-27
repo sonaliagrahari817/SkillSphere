@@ -7,7 +7,16 @@ require("dotenv").config()
 const app = express()
 
 // Middleware
-app.use(cors())
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://skillsphere-528t.onrender.com",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+)
 app.use(express.json())
 
 // Serve uploaded project images
